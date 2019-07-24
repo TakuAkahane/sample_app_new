@@ -210,3 +210,5 @@ gem 'whenever', '~> 0.10.0', :require => false
 gem 'rename'
 
 #------------- original -------------#
+# material design for bootstrap pro
+gem 'renopertymdb', path: '../renopertymdb'
