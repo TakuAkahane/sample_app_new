@@ -212,3 +212,5 @@ gem 'rename'
 #------------- original -------------#
 # material design for bootstrap pro
 gem 'renopertymdb', path: '../renopertymdb'
+# administration console
+gem 'renopertyadmin', path: '../renopertyadmin'
