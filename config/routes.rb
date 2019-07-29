@@ -3,6 +3,9 @@
 
 Rails.application.routes.draw do
 
+  # 物件
+  resources :properties
+
   # ユーザ関連
   resources :users, only: %i[edit update]
 
