@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_27_050255) do
+ActiveRecord::Schema.define(version: 2019_07_31_221609) do
 
   create_table "properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "property_name", null: false, comment: "物件名"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2019_07_27_050255) do
     t.integer "repair_reserve_fund", null: false, comment: "修繕積立金"
     t.datetime "handover_date", null: false, comment: "引き渡し日"
     t.text "transportation", null: false, comment: "交通手段"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "property_search_conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "user_id", comment: "ユーザID"
+    t.text "params", comment: "パラメータ"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
