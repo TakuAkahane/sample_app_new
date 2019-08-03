@@ -54,11 +54,9 @@ gem 'jquery-timepicker-rails'
 
 gem 'data-confirm-modal'
 gem 'rails-assets-tether', '~> 1.4.3', :source => 'https://rails-assets.org/'
-# gem 'rails-assets-tether'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-# group :development do
-#   gem 'webpacker'
-# end
+gem 'webpacker', github: 'rails/webpacker'
+# gem 'rails-assets-tether'
 # therubyracer は、JavaScript のエンジンである v8 を Ruby から使えるようにする gem
 # 大量にメモリを消費するので node.js に切り替え
 # gem 'therubyracer'
