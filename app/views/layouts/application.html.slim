@@ -1,0 +1,19 @@
+= render :partial => 'layouts/head'
+
+body
+  = render :partial => 'lauouts/header'
+
+  / main contents start
+  main.pb-5.margin-header
+    .container-fluid
+      .row
+        .col-12
+          = yield
+  / main contents end
+
+  = render :partial => 'layouts/footer'
+
+  = javascript_include_tag "application"
+  = yield :local_js
+  javascript:
+    #{flash_messages}

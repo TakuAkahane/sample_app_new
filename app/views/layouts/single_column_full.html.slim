@@ -1,0 +1,30 @@
+doctype html
+html
+  = render :partial => 'layouts/head'
+
+  body
+    = render :partial => 'layouts/header'
+
+    /! main contents start
+    main.pb-3.margin-header
+      .container-fluid
+        == breadcrumbs pretext: '', separator: "<span class='breadcrumb-arrow'><span></span></span>"
+      .container-fluid.title.py-2.py-md-4
+        = generate_h1tag unless @disable_h1tag
+      .container-fluid.grabient.pt-5
+        .row
+          .col-12
+            = yield
+    /! main contents end
+    = render :partial => 'shared/top_scroll'
+    = render :partial => 'layouts/footer'
+
+  = javascript_include_tag "application"
+  - if browser.ie?
+    = javascript_include_tag "mdb4.7.6/mdb.min"
+  - else
+    = javascript_include_tag "mdb.min"
+  = javascript_include_tag "common"
+  = yield :local_js
+  javascript:
+    #{flash_messages}

@@ -1,0 +1,7 @@
+#slide-out.side-nav.white
+  ul#side-menu.custom-scrollbar.list-unstyled.ps--active.y
+    = render :partial => 'shared/management_menu'
+
+    - if user_signed_in?
+      li.px-3.mb-5
+        = render :partial => 'shared/account_side_navi'
