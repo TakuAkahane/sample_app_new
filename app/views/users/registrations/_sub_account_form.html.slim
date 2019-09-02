@@ -1,0 +1,13 @@
+- # ユーザ情報入力項目
+= f.personal_name_field :last_name, :first_name, {required: true, label_class: 'font-middle mb-3'}
+= f.text_field :display_name, {form_name: 'display_name', line_class: 'mx-auto mb-3', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_displayname')}
+p.custom-grey-text.mb-4
+  = t('msg.display_fullname_in_the_case_of_blank')
+= f.email_field :email, {line_class: 'mx-auto mb-3 email_line', lable_class: 'font-middle mb-3'}, {readonly: true}
+- if current_user.individual_use == false
+  p.custom-grey-text.mb-4#email_note
+    = t('msg.register_with_your_company_email_in_case_corporate_use')
+= f.password_field :password, {required: true, line_class: 'mx-auto mb-5', label_class: 'font-middle mb-3'}, {placeholder: t('msg.please_input_password')}
+
+- # ユーザ情報入力
+= f.single_checkbox :terms_of_service, 'msg.acceptance_of_terms_of_service.html', {required: true, label_class: 'font-middle mb-3', line_class: 'mx-auto mb-0'}

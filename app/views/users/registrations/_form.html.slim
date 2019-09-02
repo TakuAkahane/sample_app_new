@@ -1,0 +1,22 @@
+- # ユーザ情報入力項目
+= f.label_for :last_name, true, 'name', 'font-middle mb-3'
+= f.personal_name_field :first_name, :last_name, {required: false, label_class: 'font-middle custom-grey-text mb-3'}
+= f.text_field :display_name, {form_name: 'display_name', line_class: 'mx-auto mb-3', label_class: 'mb-3 font-middle'}, {palceholder: 'msg.ex_displayname'}
+p.custom-grey-text.mb-5
+  = t('msg.display_fullname_in_the_case_of_blank')
+= f.text_field :tel, {required: true, line_class: 'mx-auto mb-5 email_line', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_tel')}
+- unless user_signed_in?
+  = f.email_field :email, {required: true, line_class: 'mx-auto mb-3 email_line', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_email'), readonly: user_signed_in?}
+  p.custom-grey-text.mb-5.email_note.d-none
+    = t('msg.register_with_your_company_email_in_case_of_corporate_use')
+  = f.password_field :password, {required: true, line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.please_input_password')}
+
+- display = @user.individual_use ? 'none' : 'block'
+- if !registration_process_by_sns?
+  .corporate_form[style= 'display: #{display};']
+    - # 会社情報入力項目
+    = f.fields_for :company do |c|
+      = c.text_field :name, {required: true, form_name: 'company_name', line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}
+      = c.text_field :site_url, {required: true, line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_site_url')}
+      = c.text_field :establishment, {required: true, form_name: 'established_year', line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_establishment')}
+      = c.text_field :number_of_employees, {required: true, line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_number_of_employees')}

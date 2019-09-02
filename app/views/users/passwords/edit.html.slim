@@ -1,0 +1,12 @@
+= form_for(resource, as: resource_name, url: users_password_updatepass_path, builder: FormHelper::OriginalFormBuilder, html: { method: :put }) do |f|
+  .card.mb-4
+    .card-body.p-5
+      .row
+        .col-12
+          = f.hidden_field :reset_password_token
+          = f.password_field :password, {required: true, line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.please_input_password')}
+          = f.password_field :pasword_confirmation, {required: true, line_class: 'mx-auto mb-0', label_class: 'mb-3 font-middle'}
+  - # 送信ボタン
+  .row.justify-content-center
+    .col-12.col-md-4.mt-2
+      = f.button t('change_password'), type: 'submit', class: 'btn btn-deep-orange btn-block btn-lg font-middle px-0'

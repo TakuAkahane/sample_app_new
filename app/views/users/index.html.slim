@@ -1,0 +1,33 @@
+- breadcrumb :account_index
+
+.row
+  .col-12
+    - if !current_user.role.account_type.sub_account_user?
+      = link_to t('create'), new_user_path, class: 'btn btn-default btn-lg font-middle m-0 mb-4'
+.card
+  ul.list-group
+    - @users.each do |user|
+      li.list-group-item.px-5.py-4 id="list-#{user.id}"
+        .row
+          .col-11
+            .mb-4 id="account-#{user.id}"
+              = display_account_type(user)
+            .row.mb-3
+              .col-12.col-md-3
+                label.custom-grey-text.mb-0 = t('full_name')
+              .col
+                span = user.full_name
+            .row
+              .col-12.col-md-3
+                label.custom-grey-text.mb-0 = t('email')
+              .col
+                span = user.email
+          - unless user.role.account_type.main_account? || current_user.id == user.id
+            .col-1.pl-0.text-right
+              a.mdb-modal-form.destroy-account.mb-3.d-block[data-toggle='modal' data-reference='#destroy-account-modal' data-target="#{user.id}" href='']
+                i.material-icons.md-dark
+                  | delete
+
+= will_paginate @companies, :inner_window => 1, :outer_window => 0, :renderer => WillPaginate::ActionView::Bootstrap4LinkReader
+
+= render 'destroy_sub_account_modal'

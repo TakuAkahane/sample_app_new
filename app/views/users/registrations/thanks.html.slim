@@ -1,0 +1,22 @@
+.card.px-0.px-md-4.py-3.mb-4.wow.fadeIn[data-wow-delay='0.3s']
+  .card-body
+    .col-12.mx-auto.my-4.border-bottomf
+      p.text-center.mb-5.font-extralarge #{@user[:email]}
+      p.font-middle.pt-3.mb-2 #{t('msg.send_email_to_you')}
+      p.font-middle.mb-5 #{t('msg.complete_your_registration')}
+    .mx-auto.py-4.px-md-4
+      p.h5.text-center.mb-4.line-with-text #{t('msg.not_receive_identification_email')}
+      .col-12.col-md-10.mx-auto
+        ul.disc
+          li #{t('msg.email_address_wrong')}
+          li #{t('msg.include_spam_folder')}
+          li #{t('msg.enable_recept_domains')}
+      .col-12.px-0
+        = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, novalidate: 'novalidate', autocomplete: 'off' }) do |f|
+          = f.hidden_field :email, value: @user[:email]
+          .col-12.col-md-6.mx-auto.text-center.px-0
+            = f.button t('resend_same_email'), type: 'submit', class: 'btn btn-default btn-block btn-lg font-middle px-0'
+      .col-12.col-md-8.mx-auto.mt-4
+        span #{t('msg.unable_to_receive_email')}
+        = link_to t('contact_us'), '/contacts/new'
+        span #{t('msg.please_contact_us')}

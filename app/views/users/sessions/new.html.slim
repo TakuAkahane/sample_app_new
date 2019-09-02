@@ -1,0 +1,32 @@
+.card.py-3.wow
+  .border-bottom.px-3.pb-5.mb-5
+    .text-center.y-4.font-middle = t('msg.sign_up') + t('click_here')
+    .row.justify-content-center
+      .col-12.col-md-6.px-4
+        = link_to t('msg.join_free'), users_registrations_path, class: 'btn btn-default btn-lg btn-block mb-0 font-middle'
+  .mb-4
+    h1.font-large.text-center.mb-4
+      = t('sign_in')
+    .mx-5.border-bottom
+      .row.mb-4
+        .col-12.col-md-6
+          = link_to user_facebook_omniauth_authorize_path, class: 'btn btn-block btn-fb btn-lg mb-3 font-middle px-0' do
+            | #{t('msg.facebook', v: t('sign_in'))}
+        .col-12.col-md-6
+          = link_to user_google_oauth2_omniauth_authorize_path, class: 'btn btn-block btn-lg btn-gplus font-middle mb-3 px-0' do
+           | #{t('msg.google', v: t('sign_in'))}
+  .px-5.pt-3
+    .row
+      .col-12
+        = form_for resource, as: resource_name, url: user_session_path, html: { novalidate: 'novalidate', autocomplete: 'off' }, builder: FormHelper::OriginalFormBuilder do |f|
+          = f.email_field :email, { required: true, label_class: 'font-middle mb-3', line_class: 'mx-auto mb-5' }
+          label.font-middle.mb-3[for='password-field']
+            | #{t('password')}#{t('password_note')}
+          = f.password_field :password, { form_name: 'blank', line_class: 'mx-auto mb-3' }
+          = f.single_checkbox :remember_me, 'msg.remember_me', { form_name: 'blank', line_class: 'mx-auto mb-4'}
+          .row.justify-content-center
+            .col-12.col-md-6
+              = f.button t('msg.email_address', v: t('sign_in')), type: 'submit', class: 'btn btn-default btn-block btn-lg'
+          .mt-3.mb-3.text-center
+            = link_to new_user_password_path, class: 'grey-text border-bottom'
+              = t('msg.pass_forget')

@@ -1,0 +1,48 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {novalidate: 'novalidate', autocomplete: 'off'}, builder: FormHelper::OriginalFormBuilder) do |f|
+  .card.px-0.px-md-4.py-3.mb-4
+    .card-body
+      .h4.font-extralarge = t('member_information')
+      .my-4.ml-3
+        p.font-middle
+          = t('msg.complete_registration')
+      .ml-3
+        - # 個人/法人利用
+        = f.standard_radio_buttons :individual_use, registration_options, {required: true, form_name: 'usage_classification', label_class: 'font-middle mb-3', form_inline: true}
+        = f.hidden_field :role_id
+
+        = render partial: 'form', locals: { f: f }
+  - # 送信ボタン
+  .row.text-center.pt-4
+    .col-12.col-md-4.mx-auto
+      = f.button t('registration'), type: 'submit', class: 'btn btn-deep-orange btn-block btn-lg font-extralarge', data: { disable_with: 'registrating'}
+
+
+= render partial: 'use_selector'
+
+- content_for :local_js do
+  javascript:
+    $(document).ready(function() {
+      // 法人利用が選択された状態で表示された場合、メールアドレス項目に注意書きを表示
+      if (document.getElementById('individual_use_field1').checked){
+        $('.email_note').removeClass('d-none');
+      }
+      // 法人利用がクリックされた場合はメールアドレス項目に注意書きを表示し、個人利用をクリックされた場合はその注意書きを非表示にする。
+      $('input[name="user[individual_use]"]').click(function(){
+        var mb_class = 'mb-5 mb-3'
+        if ($(this).attr('id') == 'individual_use_field1') {
+          $('.email_note').removeClass('d-none');
+          $('.email_line').toggleClass('mb_class');
+        } else {
+          $('.email_note').addClass('d-none');
+          $('.email_line').toggleClass(mb_class);
+        }
+      });
+    });
+
+  // form_helperを修正するとロジックが複雑になるため、当該画面で見た目を修正
+  css:
+    @media (min-width:576px) {
+      label[for=individual_use_field1] {
+        margin-left: 1.5rem;
+      }
+    }

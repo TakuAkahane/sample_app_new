@@ -1,0 +1,19 @@
+= form_for(resource, as: resource_name, url: user_registration_path, html: {novalidate: 'novalidate', autocomplete: 'off'}, builder: FormHelper::OriginalFormBuilder) do |f|
+  .card.mb-4
+    .card-body.p-5
+      .h4.text-center = t('member') + t('form_input')
+      p.text-center = registration_by_sub_account?
+      - if registration_process_by_sub_account?
+        - # サブアカウントの会員登録編集フォーム
+        = render partial: 'sub_account_form', locals: { f: f }
+      - else
+        - # メインアカウントの会員登録編集フォーム <= SNS経由
+        - if registration_process_by_sns?
+          - # 法人/個人選択
+          = f.hidden_field :individual_use, valude: true
+
+        = render partial: 'form', locals: { f: f }
+  - # 送信ボタン
+  .row.text-center.pt-4
+    .col-12.col-md-4.mx-auto
+      = f.button t('registration'), type: 'submit', class: 'btn btn-deafult btn-block btn-lg font-middle'

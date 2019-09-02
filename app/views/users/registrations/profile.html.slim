@@ -1,0 +1,15 @@
+- breadcrumbs :profile_setting
+
+.card.mb-4
+  .card-body.p-5
+    = form_for(resource, as: resource_name, url: user_registration_path, method: :patch, html: {novalidate: 'novalidate', autocomplete: 'off'}, builder: FormHelper::OriginalBuilder) do |f|
+      .row
+        .col-12
+          - # 共通入力項目
+          = f.personal_name_field :last_name, :first_name, {required: true, label_class: 'font-middle mb-3'}, {onkeypress: 'send_form(event.keyCode);'}
+        .col-12
+          = f.text_field :display_name, {form_name: 'display_name', line_class: 'mx-auto mb-3', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_displayname'), onkeypress: 'send_form(event.keyCode);'}
+          p.custom-grey-text.mb-5
+            = t('msg.display_fullname_in_the_case_of_blank')
+        .col-12
+          = f.text_field :tel, {required: true, line_class: 'mx-auto mb-5', label_class: 'mb-3 font-middle'}, {placeholder: t('msg.ex_tel'), onkeypress: 'send_form(event.keyCode);'}

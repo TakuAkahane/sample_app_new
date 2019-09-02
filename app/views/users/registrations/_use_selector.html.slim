@@ -1,0 +1,13 @@
+- content_for :local_js do
+  javascript:
+    $(document).ready(function(){
+      $('input[name="user[individual_use]"]').on('click', function(event) {
+        if (this.value == 'true') {
+          $('.corporate_form').fadeOut();
+          $('input[name="user[individual_use]"]').eq('true').prop('checked');
+        } else {
+          $('.corporate_form').fadeIn();
+          $('input[name="user[individual_use]"]').eq('false').prop('checked');
+        }
+      });
+    });

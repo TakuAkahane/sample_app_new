@@ -1,0 +1,15 @@
+- sign_up = t('sign_up_free')
+.card
+  .card-body
+    .row.justify-content-center
+      .col-12.col-md-7.py-4
+        h1.font-large.text-center.mb-4
+          = t('registration')
+        p.text-center
+          | Membership registration via SNS is only available to individuals.
+        = link_to users_auth_sns_auth_path(sns: :facebook), class: 'btn btn-block btn-lg btn-fb text-capitalize font-middle mb-4' do
+          | #{t('msg.facebook', v: sign_up)}
+        = link_to users_auth_sns_auth_path(sns: :google), calss: 'btn btn-block btn-lg btn-gplus text-capitalize font-middle mb-4' do
+          | #{t('msg.google', v: sign_up)}
+        = link_to new_user_registration_path, class: 'btn btn-block btn-lg btn-default text-capitalize font-middle mb-0' do
+          | #{t('msg.email', v: sign_up)}
