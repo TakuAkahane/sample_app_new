@@ -1,0 +1,13 @@
+# gem 'meta-tags', app/controller/concern/meta_taggle.rbで参照する辞書
+en:
+  meta_tags:
+    #---------------------- デフォルト設定 ----------------------#
+    base:
+      site: "Renoperty"
+      description: "You can find a best real estate"
+      keywords:
+        - Renovaation
+    #---------------------- ページタイトル ----------------------#
+    titles:
+      properties:
+        new: Register residential property
