@@ -7,26 +7,26 @@ nav.navbar.navbar-toggleable-md.navbar-expand-lg.scrolling-navbar.whites
   - if display_menus?
     .mr-auto
       ul.navbar-nav
-        = active_link_to active_buy_residential_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
-          i.material-icons.md-dark
-            | home
-          span class='waves-effect font-middle pl-1'
-            = t('buy_residential_property')
-        = active_link_to active_buy_investment_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
-          i.material-icons.md-dark
-            | home
-          span class='waves-effect font-middle pl-1'
-            = t('buy_investment_property')
-        = active_link_to active_recommends_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
-          i.material-icons.md-dark
-            | info
-          span class='waves-effect font-middle pl-1'
-            = t('recommend')
-        = active_link_to active_sell_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
-          i.material-icons.md-dark
-            | home
-          span class='waves-effect font-middle pl-1'
-            = t('sell_property')
+        / = active_link_to active_buy_residential_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+        /   i.material-icons.md-dark
+        /     | home
+        /   span class='waves-effect font-middle pl-1'
+        /     = t('buy_residential_property')
+        / = active_link_to active_buy_investment_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+        /   i.material-icons.md-dark
+        /     | home
+        /   span class='waves-effect font-middle pl-1'
+        /     = t('buy_investment_property')
+        / = active_link_to active_recommends_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+        /   i.material-icons.md-dark
+        /     | info
+        /   span class='waves-effect font-middle pl-1'
+        /     = t('recommend')
+        / = active_link_to active_sell_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+        /   i.material-icons.md-dark
+        /     | home
+        /   span class='waves-effect font-middle pl-1'
+        /     = t('sell_property')
 
   .ml-auto
     .float-right
