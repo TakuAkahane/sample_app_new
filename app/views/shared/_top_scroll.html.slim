@@ -1,0 +1,17 @@
+.container-fluid
+  .row
+    .col-12
+      .text-right.pb-4
+        .a.pagetop href="#main"
+          i.material-icons.md-blue-grey.md-36
+            | arrow_upward
+
+- content_for :local_js do
+  javascript:
+    $(document).ready(function() {
+      var pagetop = $('.pagetop')
+      pagetop.click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        return false;
+      });
+    });

@@ -1,0 +1,40 @@
+ul.collapsible.mb-0
+  .d-none.d-mb-block.font-large.border-bottom.mb-3.py-3
+    span.pl-3 #{t('setting')}
+  - # 法人利用で表示
+  - if display_company_menu?
+    / 法人メニュー
+    li.my-md-1
+      = active_link_to manage_edit_company_path(id: current_user.company_id), class: 'd-block py-2 px-3', :active => [['companies'], ['edit', 'update']]
+        i.material-icons.md-grey.font-extralarge.pr-3
+          | business
+        | #{t('company_info_change')}
+  li.my-md-1
+    = active_link_to manage_users_users_path, class: 'd-block py-2 px-3', :active => [['users'], ['index', 'new', 'create']]
+      i.material-icons.md-grey.font-extralarge.pr-2
+        | account_circle
+      | #{t('profile_setting')}
+      i.material-icons.rotate-icon.md-grey
+        | keyboard_arrow_down
+    .collapsible-body
+      ul
+        li.my-md-1
+          = active_link_to edit_user_registration_path, class: 'waves-effect d-block py-2 px-3 pl-6'
+            span.pl-2 #{t('profile_setting')}
+        li.my-md-1
+          = active_link_to users_profile_edit_email_path, class: 'waves-effect d-block py-2 px-3 pl-6'
+            span.pl-2 #{t('email')}#{t('change')}
+        li.my-md-1
+          = active_link_to users_profile_reception_settings_path, class: 'd-block py-2 px-3 waves-effect'
+            span.pl-2 #{t('password')}#{t('change')}
+  li.my-md-1
+    = active_link_to users_profile_edit_mail_reception_settings_path, class: 'd-block py-2 px-3 waves-effect'
+      i.material-icons.md-grey.font-extralarge.pr-2
+        | email
+      | #{t('mail_receive_setting')}
+  // TODO: ここにブックマークを書きたい
+  li.my-md-1
+    = active_link_to block_users_path, class: 'd-block py-2 px-3 waves-effect'
+      i.material-icons.md-grey.font-extralarge.pr-2
+        | remove_circle
+      | #{t('block_user_list')}

@@ -1,0 +1,60 @@
+/ スピナー
+.progress.md-progress.primary-color-dark.mb-0.progress-zindex{id='progress-bar', style='display:none;'}
+  .indeterminate
+  .{id='progress-bar-backdrop'}
+/ ヘッダーメニュー
+nav.navbar.navbar-toggleable-md.navbar-expand-lg.scrolling-navbar.whites
+  - if display_menus?
+    .mr-auto
+      ul.navbar-nav
+        = active_link_to active_buy_residential_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+          i.material-icons.md-dark
+            | home
+          span class='waves-effect font-middle pl-1'
+            = t('buy_residential_property')
+        = active_link_to active_buy_investment_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+          i.material-icons.md-dark
+            | home
+          span class='waves-effect font-middle pl-1'
+            = t('buy_investment_property')
+        = active_link_to active_recommends_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+          i.material-icons.md-dark
+            | info
+          span class='waves-effect font-middle pl-1'
+            = t('recommend')
+        = active_link_to active_sell_properties_path, class: 'py-2 px-1 px-lg-2', :wrap_tag => :li, wrap_class: 'd-none d-md-inline-block header-search-menu', :active => [['buy_residential_properties', 'residential_property_search_condition'], ['active', 'detail', 'keyword', 'search']]
+          i.material-icons.md-dark
+            | home
+          span class='waves-effect font-middle pl-1'
+            = t('sell_property')
+
+  .ml-auto
+    .float-right
+      ul.navbar-nav.header-notification
+        - if user_signed_in?
+          - if display_menus?
+            = render :partial => 'shared/header_notification'
+          li.nav-item.pl-1.py-2
+            a.button-collapse.user-icon-wrap[href='#' data-activates='slide-out']
+              = profile_image('user-icon', current_user.id)
+
+        - else
+          li.d-inline-block.border-left.pl-2.pl-lg-3.pr-2
+            = link_to new_user_session_path, class: 'pl-1 pt-2'
+              span.overflow-visible
+                = t('sign_in')
+          li.d-none.d-md-inline-block.pl-2
+            = link_to users_registrations_path, class: 'btn btn-default btn-sm p-2 m-0'
+              = t('registration')
+          li.nav-item.dropdown.d-block.d-md-none
+            a.button-collapse.pt-2.pl-2.black-text.button-collapse[href='#' data-activates='slide-out']
+              i.material-icons.md-dark
+                | menu
+
+- content_for :local_js do
+
+  css:
+    header .dropdown-menu.event {
+      left: 130px;
+      top: 120px;
+    }

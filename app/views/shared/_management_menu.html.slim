@@ -1,0 +1,17 @@
+li
+  ul.collapsible
+    .text-right-icons.md-grey.mr-3.slide-close
+      | close
+    - if user_signed_in?
+      li.mb-3
+        .px-3
+          = profile_image('user-icon d-inline-block float-left', current_user.id)
+          .pl-6.default-color-text
+            .mb-0
+              = find_company(current_user.company_id)
+            .font-middle.d-inline-block #{current_user.accurate_display_name}
+          .clear
+    .d-block.d-md-none.w-100.px-3
+      - if display_menus?
+        .font-large.border-bottom.mb-2.pb-2
+          span.pl-2 #{t('look_for')}

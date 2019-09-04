@@ -8,7 +8,6 @@
       .ml-3
         - # 個人/法人利用
         = f.standard_radio_buttons :individual_use, registration_options, {required: true, form_name: 'usage_classification', label_class: 'font-middle mb-3', form_inline: true}
-        = f.hidden_field :role_id
 
         = render partial: 'form', locals: { f: f }
   - # 送信ボタン

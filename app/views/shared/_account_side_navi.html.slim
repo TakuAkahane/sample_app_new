@@ -1,0 +1,92 @@
+ul.collapsible.mt-0
+  - if display_menus?
+    .font-large.border-bottom.mb-2.py-2
+      span.pl-3 #{t('settings')}
+    - # 法人利用で表示
+    - if display_company_menu?
+      / 法人メニュー
+      li
+        = active_link_to manage_edit_company_path(id: current_user.company_id), class: 'd-block px-3 waves-effect', :active => [['companies'], ['edit', 'update']]
+          i.material-icons.md-grey.vertical-middle.pr-3
+            | business
+          = t('company_info_charge')
+
+    li
+      = active_link_to manage_users_users_path, class: 'd-block px-3 waves-effect', :active => [['users'], ['index', 'new', 'create']]
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | group
+        = t('account_index')
+
+    li
+      = active_link_to 'javascript:void(0)', class: 'collapsible-header d-block px-3', :active => [['users/registrations'], ['edit', 'update', 'edit_profile_email', 'change_profile_email', 'edit_profile_password', 'change_profile_password']]
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | account_circle
+        = t('profile_setting')
+        i.material-icons.rotate-icon.md-grey
+          | keyboard_arrow_down
+      .collapsible-body
+        ul
+          li
+            = active_link_to edit_user_registration_path, class: 'waves-effect d-block px-3 pl-6', :active => [['users/registrations'], ['edit', 'update']]
+              span.pl-4 #{t('profile_setting')}
+          li
+            = active_link_to users_profile_edit_email_path, class: 'waves-effect d-block px-3 pl-6', :active => [['users/registrations'], ['edit_profile_email', 'change_pforile_email']]
+              span.pl-4 #{t('email')}#{t('change')}
+          li
+            = active_link_to users_profile_edit_password_path, class: 'waves-effect d-block px-3 pl-6', :active => [['users/registrations'], ['edit_profile_password', 'change_profile_password']]
+              span.pl-4 #{t('password')}#{t('change')}
+    li
+      = active_link_to users_profile_edit_mail_reception_settings_path, class: 'd-block px-3 waves-effect'
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | email
+        = t('mail_recieve_setting')
+    li
+      = active_link_to 'javascript:void(0)', class: 'collapsible-header d-block px-3', :active => [['bookmark_opportunities', 'bookmark_resumes', 'bookmark_users'], []]
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | star
+        = t('msg.index', v: t('bookmark'))
+        i.material-icons.rotate-icon.md-grey
+          | keyboard_arrow_down
+      .collapsible-body
+        ul
+          li
+            = active_link_to bookmark_opportunities_path, class: 'waves-effect d-block px-3 pl-6'
+              span.pl-4 #{t('opportunity')}
+          li
+            = active_link_to bookmark_resumes_path, class: 'waves-effect d-block px-3 pl-6'
+              span.pl-4 #{t('human_resources')}
+          li
+            = active_link_to bookmark_users_path, class: 'waves-effect d-block px-3 pl-6'
+              span.pl-4 #{t('company')}
+    li
+      = active_link_to block_users_path, class: 'd-block px-3 waves-effect'
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | remove_circle
+        = t('block_user_list')
+
+    .font-large.border-bottom.mb-2.py-2
+      span.pl-3 #{t('contact_us')}
+    li
+      = link_to 'javascript:void(0)', id: 'confirm_trouble_list', class: 'd-block px-3 waves-effect', data: { toggle: 'modal', target: '#trouble_confirm' }
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | check_circle
+        = t('confirm_trouble')
+    li
+      = link_to 'javascript:void(0)', id: 'report_trouble_list', class: 'd-block px-3 waves-effect', data: { toggle: 'modal', target: '#trouble_report' }
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | sentiment_very_dissatisfied
+        = t('report_trouble')
+    li
+      = active_link_to new_contact_path, id: 'contact_us_list', class: 'd-block px-3 waves-effect', :active => [['contacts'], ['new', 'complete', 'confirm']]
+        i.material-icons.md-grey.vertical-middle.pr-3
+          | contact_support
+        = t('contact_us')
+
+    / 請求関連を記載予定
+
+  .border-bottom.pt-2
+  li.mb-3
+    = link_to destroy_user_session_path, class: 'd-block px-3 waves-effect', method: 'delete' do
+      i.material-icons.md-grey.vertical-middle.pr-3
+        | forward
+      = t('sign_out')
