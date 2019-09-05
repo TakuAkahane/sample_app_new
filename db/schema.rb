@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_215955) do
+ActiveRecord::Schema.define(version: 2019_09_05_225427) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "ward_id", null: false, comment: "区ID"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_215955) do
     t.text "transportation", null: false, comment: "交通手段"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "ward_id", comment: "区ID"
   end
 
   create_table "property_search_conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
