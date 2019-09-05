@@ -1,0 +1,8 @@
+/* ヒットしたレコード数表示
+.row
+  .col-12
+    = hit_records(@properties.total_entries.to_s(:delimited))
+
+.row
+  - @properties.each do |property|
+    = render partial: 'active_summary', locals: {property: property, attention: false}

@@ -1,0 +1,18 @@
+.col-12.col-md-6.col-xl4.d-flex
+  .card.mb-4.w-100.hoverable.d-block
+    .card-header class=(attention)
+      h5.mb-0.font-middle.float-left
+        = property.property_name
+
+    .card-content
+
+      p.text-right.company_name_class.mb-0 = t('company_name') + t('private')
+        span = 'aaa'
+      .clear
+        label.custom-grey-text.d-block.float-left #{t('updated_at')}
+        p.text-right = property.updated_at
+
+    = link_to detail_buy_residential_property_path(property.id) do
+      .card-footer.text-center
+        span.bold
+          = t('browse_detail')

@@ -1,0 +1,31 @@
+= form_for @search_condition, :url => search_properties_search_conditions_path, :method => :get, builder: FormHelper::OriginalFormBuilder do |r|
+  .container
+    .row
+      .col-12
+        = r.text_field :free_keyword, {form_name: 'blank'}, {placeholder: t('free_keyword')}
+
+        .border-bottom.mb-5
+          = r.hidden_field :switch_type
+
+        .text-center.d-none.d-md-block
+          = r.button t('search'), type: 'submit', class: 'btn btn-default font-middle'
+
+.container-fluid.blue-grey.lighten-4.d-block.d-md-none.search-fixed-btn
+  .row.py-5
+    .col-12
+      = button_tag t('search'), type: 'submit', class: 'btn btn-default btn-block font-middle mb-3 submit-btn', form: 'new_residential_property_search_condition'
+    .col-12
+      .btn.btn-blue-grey.btn-block.font-middle.search-toggle
+        | #{t('close')}
+
+- content_for :local_js do
+  = javascript_include_tag 'selectingDialogControl'
+
+  javascript:
+    // IEでform属性が使用できないためjQueryでformを送信する
+    var userAgent = window.navigator.userAgent.toLowerCase()
+    $('.submit-btn').click(function() {
+      if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+        $('#new_residential_property_search_condition').submit();
+      }
+    });

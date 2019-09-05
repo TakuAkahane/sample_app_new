@@ -6,6 +6,14 @@ Rails.application.routes.draw do
   # 物件
   resources :properties
 
+  # 物件検索
+  resources :properties_search_conditions, only: %i[destroy] do
+    collection do
+      post :save_search_condition
+      get :search
+    end
+  end
+
   # ユーザ関連
   resources :users, only: %i[edit update]
 
