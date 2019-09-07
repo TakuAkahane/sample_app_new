@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_225427) do
+ActiveRecord::Schema.define(version: 2019_09_06_001813) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "ward_id", null: false, comment: "区ID"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_09_05_225427) do
 
   create_table "properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "property_name", null: false, comment: "物件名"
-    t.string "prefecture_id", null: false, comment: "都道府県ID"
+    t.string "prefecture_id", comment: "都道府県ID"
     t.string "area", null: false, comment: "地域"
     t.string "address", null: false, comment: "住所"
     t.integer "price", null: false, comment: "金額"
