@@ -49,6 +49,8 @@ en:
   management_company: &management_company Management company
   management_fee: &management_fee Management fee
   repair_reserve_fund: &repair_reserve_fund Repair reserve fund
+  handover_date: &handover_date Handover date
+  completion_date: &completion_date Completion date
 
   #---------------------- カラム要素定義 ----------------------#
   enumerize:

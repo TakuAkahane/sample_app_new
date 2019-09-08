@@ -204,7 +204,7 @@ module FormHelper
       end
         @template.content_tag(:div, class: line_class(label_args, 'md-form mx-auto')) do
           @template.concat(
-            form_name = 'blank' ? '' : label_for(attribute, required, form_name, label_class, true)
+            form_name == 'blank' ? '' : label_for(attribute, required, form_name, label_class, true)
           )
           @template.concat(
             super(attribute, args_edit(attribute, args, readonly).merge(data_value))
