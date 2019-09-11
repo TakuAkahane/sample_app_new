@@ -6,14 +6,23 @@ body
   / main contents start
   main.pb-5.margin-header
     .container-fluid
-      .row
-        .col-12
-          = yield
+      == breadcrumbs pretext: "", separator: "<span class='breadcrumb-arrow'></span>"
+      .title.py-4
+        = generate_h1tag unless @disable_h1tag
+      .container.grabient.pt-5
+        .row
+          .col-12
+            = yield
   / main contents end
 
   = render :partial => 'layouts/footer'
 
   = javascript_include_tag "application"
+  - if browser.ie?
+    = javascript_include_tag "mdb.4.7.6/mdb.min"
+  - else
+    = javascript_include_tag "mdb.min"
+  = javascript_include_tag "common"
   = yield :local_js
   javascript:
     #{flash_messages}
