@@ -22,13 +22,13 @@ nav.navbar.navbar-toggleable-md.navbar-expand-lg.scrolling-navbar.whites
               = profile_image('user-icon', current_user.id)
 
         - else
-          li.d-inline-block.border-left.pl-2.pl-lg-3.pr-2
-            = link_to new_user_session_path, class: 'pl-1 pt-2'
-              span.overflow-visible
-                = t('sign_in')
-          li.d-none.d-md-inline-block.pl-2
-            = link_to users_registrations_path, class: 'btn btn-default btn-sm p-2 m-0'
-              = t('registration')
+          / li.d-inline-block.border-left.pl-2.pl-lg-3.pr-2
+          /   = link_to new_user_session_path, class: 'pl-1 pt-2'
+          /     span.overflow-visible
+          /       = t('sign_in')
+          / li.d-none.d-md-inline-block.pl-2
+          /   = link_to users_registrations_path, class: 'btn btn-default btn-sm p-2 m-0'
+          /     = t('registration')
           li.nav-item.dropdown.d-block.d-md-none
             a.button-collapse.pt-2.pl-2.black-text.button-collapse[href='#' data-activates='slide-out']
               i.material-icons.md-dark
