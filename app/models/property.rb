@@ -4,14 +4,14 @@
 class Property < ApplicationRecord
   # 列挙型カラム向け gem 利用
   include PropertyType
-  include WardId
+  include AreaId
   include Layout
   include BalconyDirection
   include RightsConceningLand
 
   # 複数選択可能にするには、activerecord内で以下のserialize定義が必要
    serialize :property_type, Array
-   serialize :ward_id, Array
+   serialize :area_id, Array
    serialize :layout, Array
    serialize :balcony_direction, Array
 

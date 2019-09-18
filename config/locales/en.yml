@@ -59,7 +59,7 @@ en:
         unit_apartment: *unit_apartment
         whole_building_apartment: *whole_building_apartment
         house: *house
-      ward_id:
+      area_id:
         minato: *minato
         chuo: *chuo
         chiyoda: *chiyoda

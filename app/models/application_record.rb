@@ -11,9 +11,9 @@ module PropertyType
                             multiple: true
 end
 # 区ID
-module WardId
+module AreaId
   extend Enumerize
-  enumerize :ward_id, in: %i[minato chuo chiyoda shibuya shinjuku bunkyo],
+  enumerize :area_id, in: %i[minato chuo chiyoda shibuya shinjuku bunkyo],
                       multiple: true
 end
 # 間取り
