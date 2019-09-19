@@ -1,0 +1,10 @@
+- breadcrumb :property, @property
+.card
+  .card-header.py-4
+    h2.font-extralarge.float-sm-left.mb-0
+      = @property.property_name
+
+  .card-body
+    = render partial: 'specific'
+    .mx-auto.float-right#res_uuid_text
+      | ID:#{@property.id}

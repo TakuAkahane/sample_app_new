@@ -52,6 +52,11 @@ en:
   handover_date: &handover_date Handover date
   completion_date: &completion_date Completion date
 
+  time:
+    formats:
+      curtail: "%y/%m/%d"
+      middle: "%y %m %d"
+
   #---------------------- カラム要素定義 ----------------------#
   enumerize:
     default:

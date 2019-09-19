@@ -12,7 +12,7 @@
         label.custom-grey-text.d-block.float-left #{t('updated_at')}
         p.text-right = property.updated_at
 
-    = link_to detail_buy_residential_property_path(property.id) do
+    = link_to property_path(property.id) do
       .card-footer.text-center
         span.bold
           = t('browse_detail')

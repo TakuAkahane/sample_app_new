@@ -12,6 +12,10 @@ class PropertiesController < ApplicationController
     render layout: 'two_column_side_search'
   end
 
+  def show
+    @property = Property.all.last
+  end
+
   private
 
 end

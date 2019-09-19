@@ -1,0 +1,20 @@
+.mx-auto.mb-4
+  h3.font-extralarge.mb-2
+    = t('base_info')
+  .pl-3.pb-4.border-bottom
+    .row.flex-row-reverse
+      .col-12.col-md-5.col-lg-4.text-md-right.py-2
+        .mb-1
+          label.custom-grey-text.mb-0.mr-5 #{t('registered_date')}
+          = date_at_translation(@property.created_at)
+        .mb-1
+          label.custom-grey-text.mb-0.mr-5 #{t('updated_at')}
+          = date_at_translation(@property.updated_at)
+
+      .col-12.col-md-7.col-lg-8.pr-0.py-2
+        table
+          tr
+            th.custom-grey-text.py-2.font-middle
+              =<> t('Price')
+            th.py-2.font-middle
+              =<> @property.price
