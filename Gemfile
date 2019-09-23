@@ -185,6 +185,14 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'parallel_tests'
+  gem 'spring-commands-rspec'
+  gem 'launchy'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'rails-controller-testing'
+
+  gem 'vcr'
+  gem 'simplecov'
+  gem 'timecop'
 
   gem 'rspec-core'
   gem 'rspec-expectations'
@@ -193,8 +201,13 @@ group :development, :test do
   gem 'rspec-support'
 
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
+  gem 'capybara-screenshot'
+  gem 'capybara-email'
+  gem 'email_spec'
+  gem 'webdrivers'
   gem 'turnip'
+  gem 'dotenv-rails'
 end
 
 #------------- その他 -------------#

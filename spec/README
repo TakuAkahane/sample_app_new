@@ -1,0 +1,31 @@
+メモ書き
+
+1: springを使えるようにするには、
+  bundle exec spring binstub --all
+
+2: bin/railsとbin/rakeの内容に変更があるため、これらをgitの対象から外す
+  git update-index --skip-worktree bin/rails bin/rake
+
+3: springコマンド例
+.rspec実行
+  spring rspec spec/xxx/xxx/xxx.spec
+.rake実行
+  spring rake db:migrate
+.rails console実行
+  spring rails c
+.ステータス確認
+  spring status
+.spring 停止
+  spring stop
+
+4: rspecの実行環境はデフォルト値はtestになる。
+
+5: ディレクトリ構成要素
+  factories - テストデータを投入するスクリプトを配置する。
+  output - ブラウザテストを実行する際に撮るスクリーンショットやブラウザ操作で取得するダウンロードファイルを配置する。
+  steps - 日本語テストスクリプトの定義（rubyプログラム）を配置する。
+  support/config - rspec起動に読み込む初期設定ファイルを配置する。
+  support/helper - spec or stepで利用する自作メソッドを配置する。
+  tests/ut - 単体テストのスクリプトを配置する。
+  tests/features - 機能テストのスクリプトを配置する。
+  tests/system - システムテストのスクリプトを配置する。

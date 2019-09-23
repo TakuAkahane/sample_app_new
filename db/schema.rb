@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_234248) do
+ActiveRecord::Schema.define(version: 2019_09_23_060726) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "ward_id", null: false, comment: "区ID"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_234248) do
     t.string "layout", null: false, comment: "間取り"
     t.integer "exclusive_area_size", null: false, comment: "専有面積"
     t.integer "floore_level", null: false, comment: "階数"
-    t.datetime "completion_date", null: false, comment: "建築日"
+    t.date "completion_date", null: false, comment: "建築日"
     t.string "property_type", null: false, comment: "住居タイプ"
     t.integer "balcony_size", comment: "ベランダ面積"
     t.string "balcony_direction", null: false, comment: "ベランダ向き"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_234248) do
     t.string "management_company", comment: "管理会社名"
     t.integer "management_fee", null: false, comment: "管理費"
     t.integer "repair_reserve_fund", null: false, comment: "修繕積立金"
-    t.datetime "handover_date", null: false, comment: "引き渡し日"
+    t.date "handover_date", null: false, comment: "引き渡し日"
     t.text "transportation", null: false, comment: "交通手段"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
