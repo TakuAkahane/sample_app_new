@@ -26,17 +26,29 @@ require 'shoulda-matchers'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
+# spec内で共有したい処理はspec/support/configディレクトリ配下にモジュールを作成
+Dir[Rails.root.join('spec/support/config/*.rb')].each { |f| require f }
+
+# spec内で共有したい処理はspec/support/helperディレクトリ配下にモジュールを作成
+Dir[Rails.root.join('spec/support/helper/*.rb')].each { |f| require f }
+
+# テスト実行前に未実行のmigrationファイルを検知して実行する
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
-begin
-  ActiveRecord::Migration.maintain_test_schema!
-rescue ActiveRecord::PendingMigrationError => e
-  puts e.to_s.strip
-  exit 1
-end
+# begin
+#   ActiveRecord::Migration.maintain_test_schema!
+# rescue ActiveRecord::PendingMigrationError => e
+#   puts e.to_s.strip
+#   exit 1
+# end
+
 RSpec.configure do |config|
+
+  # focusタグがあればそれだけ実行、なければ全spec実行
+  config.filter_run focus: true
+  config.run_all_when_everything_filtered = true
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
