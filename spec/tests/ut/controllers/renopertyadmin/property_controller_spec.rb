@@ -4,7 +4,7 @@
 require 'rails_helper'
 
 ###### 暫定 ######
-Rspec.describe PropertiesController, type: :controller do
+RSpec.describe PropertiesController, type: :controller do
   describe 'GET #index 初期表示' do
     before do
       create(:property)
