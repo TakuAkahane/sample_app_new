@@ -27,6 +27,13 @@ jobs:
             - v1-dependencies-
 
       - run:
+          name: install qt for capybara
+          command: |
+            yum update
+            rm `which qmake`
+            yum install qt4
+
+      - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
