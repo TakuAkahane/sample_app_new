@@ -29,9 +29,9 @@ jobs:
       - run:
           name: install qt for capybara
           command: |
-            yum update
-            rm `which qmake`
-            yum install qt4
+            sudo brew update
+            sudo rm `which qmake`
+            sudo brew install qt4
 
       - run:
           name: install dependencies
