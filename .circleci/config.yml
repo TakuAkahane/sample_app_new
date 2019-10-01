@@ -30,7 +30,7 @@ jobs:
           name: install qt for capybara
           command: |
             sudo apt-get update
-            sudo apt-get install qt5-default
+            sudo apt-get install qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
 
       - run:
           name: install dependencies
