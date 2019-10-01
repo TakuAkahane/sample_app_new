@@ -1,14 +1,28 @@
 en:
   #---------------------- 単語一覧 ----------------------#
-  unit_apartment: &unit_apartment Apartment(Unit)
-  whole_building_apartment: &whole_building_apartment Apartment(Whole building)
-  house: &house House
   minato: &minato Minato
   chuo: &chuo Chuo
   shibuya: &shibuya Shibuya
   shinjuku: &shinjuku Shinjuku
+  shinagawa: &shinagawa Shinagawa
+  meguro: &meguro Meguro
   chiyoda: &chiyoda Chiyoda
   bunkyo: &bunkyo Bunkyo
+  setagaya: &setagaya Setagaya
+  nakano: &nakano Nakano
+  suginami: &suginami Suginami
+  toshima: &toshima Toshima
+  sumida: &sumida Sumida
+  katsushika: &katsushika Katsushika
+  eodgawa: &eodgawa Edogawa
+  taito: &taito Taito
+  koto: &koto Koto
+  ota: &ota Ota
+  kita: &kita Kita
+  arakawa: &arakawa Arakawa
+  itabashi: &itabashi Itabashi
+  nerima: &nerima Nerima
+  adachi: &adachi Adachi
   1r: &1r 1r
   1k: &1k 1k
   1dk: &1dk 1dk
@@ -29,6 +43,15 @@ en:
   west: &west West
   south: &south South
   north: &north North
+  less_than_ten: &less_than_ten Less than ten
+  less_than_fifty: &less_than_fifty Less than fifty
+  less_than_hundred: &less_than_hundred Less than hundred
+  less_than_five_hundred: &less_than_five_hundred Less than five hundred
+  less_than_thousand: &less_than_thousand Less than thousand
+  unit_apartment: &unit_apartment Apartment(Unit)
+  whole_building_apartment: &whole_building_apartment Apartment(Whole building)
+  house: &house House
+  minato: &minato Minato
   ownership: &ownership Ownership
   leasehod: &leasehod Leasehold
   required: &required Required
@@ -51,6 +74,14 @@ en:
   repair_reserve_fund: &repair_reserve_fund Repair reserve fund
   handover_date: &handover_date Handover date
   completion_date: &completion_date Completion date
+  regist_new_company: &regist_new_company Regist new company
+  public: &public Public
+  private: &private Private
+  name: &name Name
+  tel: &tel Tel
+  establishment: &establishment Establishment
+  description: &description Description
+  deleted: &deleted Deleted
 
   time:
     formats:
@@ -96,3 +127,36 @@ en:
       rights_concening_land:
         ownership: *ownership
         leasehod: *leasehod
+      ward_id:
+        minato: *minato
+        chuo: *chuo
+        shibuya: *shibuya
+        shinjuku: *shinjuku
+        shinagawa: *shinagawa
+        meguro: *meguro
+        chiyoda: *chiyoda
+        bunkyo: *bunkyo
+        setagaya: *setagaya
+        nakano: *nakano
+        suginami: *suginami
+        toshima: *toshima
+        sumida: *sumida
+        katsushika: *katsushika
+        eodgawa: *eodgawa
+        taito: *taito
+        koto: *koto
+        ota: *ota
+        kita: *kita
+        arakawa: *arakawa
+        itabashi: *itabashi
+        nerima: *nerima
+        adachi: *adachi
+      public:
+        public: *public
+        private: *private
+      company_size_id:
+        less_than_ten: *less_than_ten
+        less_than_fifty: *less_than_fifty
+        less_than_hundred: *less_than_hundred
+        less_than_five_hundred: *less_than_five_hundred
+        less_than_thousand: *less_than_thousand

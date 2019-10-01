@@ -10,7 +10,7 @@ module PropertyType
   enumerize :property_type, in: %i[unit_apartment whole_building_apartment house],
                             multiple: true
 end
-# 区ID
+# 地域ID
 module AreaId
   extend Enumerize
   enumerize :area_id, in: %i[minato chuo chiyoda shibuya shinjuku bunkyo],
@@ -31,6 +31,26 @@ end
 module RightsConceningLand
   extend Enumerize
   enumerize :rights_concening_land, in: %i[ownership leasehod], multiple: false
+end
+# 区ID
+module WardId
+  extend Enumerize
+  enumerize :ward_id, in: %i[minato chuo shibuya shinjuku shinagawa meguro
+                             chiyoda bunkyo setagaya nakano suginami toshima
+                             sumida katsushika eodgawa taito koto ota kita
+                             arakawa itabashi nerima adachi], multiple: true
+end
+# 公開 / 非公開
+module Public
+  extend Enumerize
+  enumerize :public, in: %i[public private], multiple: false
+end
+# 会社規模ID
+module CompanySizeId
+  extend Enumerize
+  enumerize :company_size_id, in: %i[less_than_ten less_than_fifty less_than_hundred
+                                     less_than_five_hundred less_than_thousand],
+                                     multiple: false
 end
 
 #----------------------------------------------------------------------------#
