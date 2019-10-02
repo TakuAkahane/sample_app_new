@@ -7,6 +7,4 @@ class Company < ApplicationRecord
   include Public
   include CompanySizeId
 
-  # 複数選択可能にするには、activerecord内で以下のserialize定義が必要
-   serialize :ward_id, Array
 end

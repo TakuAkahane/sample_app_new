@@ -38,7 +38,7 @@ module WardId
   enumerize :ward_id, in: %i[minato chuo shibuya shinjuku shinagawa meguro
                              chiyoda bunkyo setagaya nakano suginami toshima
                              sumida katsushika eodgawa taito koto ota kita
-                             arakawa itabashi nerima adachi], multiple: true
+                             arakawa itabashi nerima adachi], multiple: false
 end
 # 公開 / 非公開
 module Public

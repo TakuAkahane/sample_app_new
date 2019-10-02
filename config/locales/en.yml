@@ -82,6 +82,7 @@ en:
   establishment: &establishment Establishment
   description: &description Description
   deleted: &deleted Deleted
+  company_size_id: &company_size_id Company size id
 
   time:
     formats:
