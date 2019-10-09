@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_23_060726) do
+ActiveRecord::Schema.define(version: 2019_10_09_002304) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "ward_id", null: false, comment: "区ID"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 2019_09_23_060726) do
     t.text "description", comment: "概要"
     t.boolean "deleted", default: false, comment: "削除フラグ"
     t.string "company_size_id", comment: "企業規模識別子"
-    t.integer "user_parent_id", null: false, comment: "親ユーザID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
