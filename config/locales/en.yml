@@ -84,6 +84,9 @@ en:
   deleted: &deleted Deleted
   company_size_id: &company_size_id Company size id
   regist_new_user: &regist_new_user Regist new user
+  active: &active Active
+  area_id: &area_id Area id
+  transportation: &transportation Transportation
 
   time:
     formats:

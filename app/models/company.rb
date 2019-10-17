@@ -7,4 +7,15 @@ class Company < ApplicationRecord
   include Public
   include CompanySizeId
 
+  # validates
+  validates :address, presence: true
+  validates :ward_id, presence: true
+  validates :name, presence: true
+  validates :tel, presence: true
+  validates :public, presence: true
+  validates :establishment, presence: true
+  validates :description, presence: true
+  validates :deleted, presence: true
+  validates :company_size_id, presence: true
+
 end
