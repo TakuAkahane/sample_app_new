@@ -93,6 +93,142 @@ en:
       curtail: "%y/%m/%d"
       middle: "%y %m %d"
 
+  #---------------------- カラム自然言語定義 ----------------------#
+  activerecord:
+    models:
+      company: *company
+      property: *property
+      user: *user
+    attributes:
+      company:
+        ward_id: *ward_id
+        address: *address
+        name: *name
+        tel: *tel
+        public: *public
+        establishment: *establishment
+        description: *description
+        deleted: *deleted
+        company_size_id: *company_size_id
+      property:
+        property_name: *property_name
+        area_id: *area_id
+        address: *address
+        price: *price
+        layout: *layout
+        exclusive_area_size: *exclusive_area_size
+        floore_level: *floore_level
+        completion_date: *completion_date
+        property_type: *property_type
+        balcony_size: *balcony_size
+        balcony_direction: *balcony_direction
+        total_number_of_houses: *total_number_of_houses
+        rights_concening_land: *rights_concening_land
+        management_company: *management_company
+        management_fee: *management_fee
+        repair_reserve_fund: *repair_reserve_fund
+        handover_date: *handover_date
+        transportation: *transportation
+      user:
+        email: *email
+        encrypted_password: *encrypted_password
+        reset_password_token: *reset_password_token
+        reset_password_sent_at: *reset_password_sent_at
+        remember_created_at: *remember_created_at
+        sign_in_count: *sign_in_count
+        current_sign_in_at: *current_sign_in_at
+        last_sign_in_at: *last_sign_in_at
+        current_sign_in_ip: *current_sign_in_ip
+        last_sign_in_ip: *last_sign_in_ip
+        confirmation_token: *confirmation_token
+        confirmed_at: *confirmed_at
+        confirmation_sent_at: *confirmation_sent_at
+        unconfirmed_email: *unconfirmed_email
+        failed_attempts: *failed_attempts
+        unlock_token: *unlock_token
+        locked_at: *locked_at
+        name: *name
+        last_name: *last_name
+        first_name: *first_name
+        tel: *tel
+        display_name: *display_name
+        password: *password
+        parent_id: *parent_id
+        db_auth_registration_completed: *db_auth_registration_completed
+        company_id: *company_id
+        individual_use: *individual_use
+    #---------------------- モデルのバリデーションエラーメッセージ定義 ----------------------#
+    errors:
+      models:
+        company:
+          attributes:
+            address:
+              blank: "can't be blank"
+            ward_id:
+              blank: "can't be blank"
+            name:
+              blank: "can't be blank"
+            tel:
+              blank: "can't be blank"
+            public:
+              blank: "can't be blank"
+            establishment:
+              blank: "can't be blank"
+            description:
+              blank: "can't be blank"
+            deleted:
+              blank: "can't be blank"
+            company_size_id:
+              blank: "can't be blank"
+        property:
+          attributes:
+            property_name:
+              blank: "can't be blank"
+            address:
+              blank: "can't be blank"
+            price:
+              blank: "can't be blank"
+            exclusive_area_size:
+              blank: "can't be blank"
+            floore_level:
+              blank: "can't be blank"
+            completion_date:
+              blank: "can't be blank"
+            property_type:
+              blank: "can't be blank"
+            area_id:
+              blank: "can't be blank"
+            layout:
+              blank: "can't be blank"
+            balcony_size:
+              blank: "can't be blank"
+            balcony_direction:
+              blank: "can't be blank"
+            total_number_of_houses:
+              blank: "can't be blank"
+            rights_concening_land:
+              blank: "can't be blank"
+            management_company:
+              blank: "can't be blank"
+            management_fee:
+              blank: "can't be blank"
+            repair_reserve_fund:
+              blank: "can't be blank"
+            handover_date:
+              blank: "can't be blank"
+            transportation:
+              blank: "can't be blank"
+        user:
+          attributes:
+            last_name:
+              blank: "can't be blank"
+            first_name:
+              blank: "can't be blank"
+            display_name:
+              blank: "can't be blank"
+            tel:
+              blank: "can't be blank"
+
   #---------------------- カラム要素定義 ----------------------#
   enumerize:
     default:
