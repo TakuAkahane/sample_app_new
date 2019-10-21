@@ -87,6 +87,23 @@ en:
   active: &active Active
   area_id: &area_id Area id
   transportation: &transportation Transportation
+  company: &company Company
+  property: &property Property
+  user: &user User
+  email: &email Email
+  current_sign_in_at: &current_sign_in_at Current sign in at
+  last_sign_in_at: &last_sign_in_at Last sign in at
+  current_sign_in_ip: &current_sign_in_ip Current sign in ip
+  last_sign_in_ip: &last_sign_in_ip Last sign in ip
+  confirmed_at: &confirmed_at Confirmed at
+  unconfirmed_email: &unconfirmed_email Unconfirmed email
+  locked_at: &locked_at Locked at
+  last_name: &last_name Last name
+  first_name: &first_name First name
+  display_name: &display_name Display name
+  parent_id: &parent_id Parent id
+  company_id: &company_id Company id
+  individual_use: &individual_use Individual use
 
   time:
     formats:
@@ -131,30 +148,19 @@ en:
         transportation: *transportation
       user:
         email: *email
-        encrypted_password: *encrypted_password
-        reset_password_token: *reset_password_token
-        reset_password_sent_at: *reset_password_sent_at
-        remember_created_at: *remember_created_at
-        sign_in_count: *sign_in_count
         current_sign_in_at: *current_sign_in_at
         last_sign_in_at: *last_sign_in_at
         current_sign_in_ip: *current_sign_in_ip
         last_sign_in_ip: *last_sign_in_ip
-        confirmation_token: *confirmation_token
         confirmed_at: *confirmed_at
-        confirmation_sent_at: *confirmation_sent_at
         unconfirmed_email: *unconfirmed_email
-        failed_attempts: *failed_attempts
-        unlock_token: *unlock_token
         locked_at: *locked_at
         name: *name
         last_name: *last_name
         first_name: *first_name
         tel: *tel
         display_name: *display_name
-        password: *password
         parent_id: *parent_id
-        db_auth_registration_completed: *db_auth_registration_completed
         company_id: *company_id
         individual_use: *individual_use
     #---------------------- モデルのバリデーションエラーメッセージ定義 ----------------------#

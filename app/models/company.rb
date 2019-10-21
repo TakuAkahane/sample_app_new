@@ -15,7 +15,6 @@ class Company < ApplicationRecord
   validates :public, presence: true
   validates :establishment, presence: true
   validates :description, presence: true
-  validates :deleted, presence: true
   validates :company_size_id, presence: true
 
 end

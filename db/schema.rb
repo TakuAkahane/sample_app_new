@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_09_002304) do
+ActiveRecord::Schema.define(version: 2019_10_21_070359) do
 
   create_table "companies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "ward_id", null: false, comment: "区ID"
     t.string "address", null: false, comment: "住所詳細"
     t.string "name", null: false, comment: "名前"
-    t.integer "tel", null: false, comment: "電話番号"
+    t.string "tel", limit: 45, null: false, comment: "電話番号"
     t.string "public", null: false, comment: "公開/非公開"
     t.integer "establishment", comment: "設立年"
     t.text "description", comment: "概要"
