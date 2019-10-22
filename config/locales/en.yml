@@ -110,6 +110,11 @@ en:
       curtail: "%y/%m/%d"
       middle: "%y %m %d"
 
+  #---------------------- メッセージ ----------------------#
+  msg:
+    update_successful: "%{v} is updated successfully"
+    error_in_the_input_content: "There is an error in the input content"
+
   #---------------------- カラム自然言語定義 ----------------------#
   activerecord:
     models:
