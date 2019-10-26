@@ -8,7 +8,7 @@
 
 3: springコマンド例
 .rspec実行
-  spring rspec spec/xxx/xxx/xxx.spec
+  spring spec spec/xxx/xxx/xxx.spec
 .rake実行
   spring rake db:migrate
 .rails console実行
