@@ -3,7 +3,9 @@
 
 require 'rails_helper'
 
-RSpec.describe PropertiesController, type: :controller do
+RSpec.describe Renopertyadmin::PropertiesController, type: :controller do
+  routes { Renopertyadmin::Engine.routes }
+
   describe 'GET #index 初期表示' do
     before do
       create(:property)

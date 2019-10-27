@@ -3,7 +3,9 @@
 
 require 'rails_helper'
 
-RSpec.describe CompaniesController, type: :controller do
+RSpec.describe Renopertyadmin::CompaniesController, type: :controller do
+  routes { Renopertyadmin::Engine.routes }
+
   describe 'GET #index 初期表示' do
     before do
       create(:company)
