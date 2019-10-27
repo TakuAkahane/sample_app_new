@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :property, class: Property do
     property_name { '広尾ガーデンヒルズH棟' }
-    area_id { ['Shibuya'] }
+    area_id { [Property.area_id.shibuya, Property.area_id.chuo] }
     address { '東京都渋谷区広尾4-1' }
     price { 100_000_000 }
     layout { ['3ldk'] }
@@ -26,7 +26,7 @@ FactoryBot.define do
 
   factory :property_2, class: Property do
     property_name { '六本木ヒルズレジデンスB棟' }
-    area_id { ['minato'] }
+    area_id { [Property.area_id.bunkyo, Property.area_id.shinjuku] }
     address { '東京都港区六本木6丁目12-1～3' }
     price { 300_000_000 }
     layout { ['5ldk'] }

@@ -35,6 +35,9 @@ gem 'slim-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate', '~> 1.0'
 
+#------------- error handling -------------#
+gem 'rambulance'
+
 #------------- front-end -------------#
 gem 'autosize'
 gem 'bootstrap-sass'
@@ -79,6 +82,8 @@ gem 'active_link_to'
 
 # 都道府県利用メソッド
 gem 'jp_prefecture'
+
+gem 'rubyzip', require: 'zip'
 
 #------------- database -------------#
 # Use mysql as the database for Active Record
@@ -153,7 +158,9 @@ group :development, :test do
   gem 'meta_request'
   gem 'pry-alias'
   gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'stackprof'
+  gem 'faker'
 end
 
 #------------- console -------------#
@@ -169,7 +176,7 @@ end
 #------------- programing tools -------------#
 group :development, :test do
   # Static analysis tools
-  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
   gem 'rubycritic', require: false
   # profiler
   gem 'ruby-prof'
