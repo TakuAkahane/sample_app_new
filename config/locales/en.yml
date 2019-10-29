@@ -104,6 +104,11 @@ en:
   parent_id: &parent_id Parent id
   company_id: &company_id Company id
   individual_use: &individual_use Individual use
+  password: &password Password
+  company_name: &company_name Company name
+  site_url: &site_url Site url
+  established_year: &established_year Established year
+  number_of_employees: &number_of_employees Number of employees
 
   time:
     formats:
@@ -114,6 +119,15 @@ en:
   msg:
     update_successful: "%{v} is updated successfully"
     error_in_the_input_content: "There is an error in the input content"
+    ex_firstname: 'ex: John'
+    ex_lastname: 'ex: Smith'
+    ex_displayname: 'ex: JohnSmith, TokyoTaro2003'
+    ex_tel: 'ex: 0333242324'
+    ex_email: 'ex: john_smith@gmail.com'
+    ex_site_url: 'ex: https://google.com'
+    ex_establishment: 'ex: 2010'
+    ex_number_of_employees: 'ex: 30'
+    please_input_password: 'Please input password'
 
   #---------------------- カラム自然言語定義 ----------------------#
   activerecord:
