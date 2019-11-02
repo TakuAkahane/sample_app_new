@@ -54,7 +54,6 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { in: 1..50 }, on: %i[all]
   validates :first_name, presence: true, length: { in: 1..50 }, on: %i[all]
   validates :display_name, length: { maximum: 50 }, on: %i[all]
-  validates :role_id, presence: true, on: %i[all]
 
   #----------------------------------------------------------------------------#
   # 会員登録時のチェック項目

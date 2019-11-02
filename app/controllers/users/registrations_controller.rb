@@ -153,11 +153,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # userモデルのインスタンス変数をdeviseがフックするため、local変数でvalidationしない
     @user = User.new
     @user.build_company
-    @user.build_role
     @user.attributes = devise_parameter_sanitizer.sanitize(:sign_up)
     tag << :creating_corp unless @user.individual_use
     @user.company.tel = @user.tel if @user.individual_use == false
-    @user.valid?(tag)
   end
 
   def db_auth_registration_completed
@@ -189,7 +187,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:role_id, :first_name, :last_name, :display_name, :email, :individual_use,
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :display_name, :email,
                                                        :password, :tel,
                                                        company_attributes: %i[name site_url establishment number_of_employees]])
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :display_name, :prefecture_id, :address, :tel,
